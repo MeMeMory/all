@@ -1,6 +1,11 @@
 .header {
     height: 7rem;
 
+    &.fixed-bg {
+        background: #221E59;
+        box-shadow: 0px 2px 3px rgba(46, 52, 64, 0.06), 0px 2px 12px rgba(46, 52, 64, 0.08);
+    }
+
     @include media-breakpoint-down(lg) {
         height: 4.5rem;
     }

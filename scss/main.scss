@@ -61,6 +61,9 @@ body {
     color: $dark-dray;
     background: #F8F8F8;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 
     &.fixed {
         overflow: hidden;
@@ -76,7 +79,7 @@ body {
 }
 
 .main-content {
-    overflow-x: hidden;
+    flex-grow: 1;
 }
 
 .heading-block {

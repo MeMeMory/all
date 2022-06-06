@@ -1,5 +1,6 @@
 .courses {
     margin-bottom: 20rem;
+    overflow: hidden;
 }
 
 @include media-breakpoint-down(lg) {
