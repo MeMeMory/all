@@ -1,0 +1,207 @@
+.contact {
+    position: relative;
+    z-index: 3;
+    padding-bottom: 10rem;
+
+    &:before {
+        position: absolute;
+        content: '';
+        z-index: -1;
+        left: 0;
+        right: 0;
+        bottom: -30rem;
+        height: 240rem;
+        background: url("../../img/footer/background3Frame.png") bottom/cover no-repeat;
+
+        @media screen and (min-width: 1901px) {
+            background: url("../../img/footer/background3-big.png") top repeat-x;
+            bottom: -20rem;
+        }
+
+        @media only screen and (max-width: 1900px) {
+            height: 240rem;
+            background: url("../../img/footer/background2.png") top no-repeat;
+            bottom: -20rem;
+        }
+
+        @include media-breakpoint-down(lg) {
+            content: none;
+        }
+    }
+
+    &:after {
+        position: absolute;
+        content: '';
+        z-index: 1;
+        left: 0;
+        right: 0;
+        bottom: -.2rem;
+        height: 25.7rem;
+        background: url("../../img/footer/footer-bg-big.png") top repeat-x;
+
+        @media (-webkit-min-device-pixel-ratio: 2) {
+            height: 28.2rem;
+        }
+
+        @media screen and (max-width: 1920px) {
+            height: 39.5rem;
+            background: url("../../img/footer/footer-bg.png") top repeat-x;
+        }
+
+        @include media-breakpoint-down(lg) {
+            content: none;
+        }
+    }
+
+    @include media-breakpoint-down(lg) {
+        margin-bottom: 6rem;
+    }
+
+    @include media-breakpoint-down(md) {
+        padding-bottom: 0;
+        margin-bottom: 3rem;
+    }
+
+    .heading {
+        margin-bottom: 3rem;
+
+        .descriptor {
+            background: #c6ff99;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h1 {
+            color: $white;
+
+            @include media-breakpoint-down(md) {
+                margin-bottom: 1rem;
+            }
+        }
+
+        .subscript {
+            p, a {
+                color: $white;
+            }
+
+            @include media-breakpoint-down(md) {
+                p {
+                    br {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        @include media-breakpoint-down(lg) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    .block-pb {
+        padding-bottom: 9.3rem;
+
+        @media screen and (max-width: 1420px) {
+            padding-bottom: 5.5rem;
+        }
+
+        @media screen and (max-width: 1280px) {
+            padding-bottom: 0px;
+        }
+    }
+
+    .contact-form {
+        .form-field {
+            margin-bottom: 2.5rem;
+
+            .form-control {
+                &::placeholder {
+                    color: #0000004d;
+                }
+            }
+
+            @include media-breakpoint-down(lg) {
+                margin-bottom: 1rem;
+            }
+        }
+
+        .form-control {
+            height: 4.8rem;
+
+            @include media-breakpoint-down(lg) {
+                height: 4.6rem;
+            }
+        }
+
+        textarea.form-control {
+            height: 12rem;
+            resize: none;
+
+            @include media-breakpoint-down(md) {
+                border-radius: 2rem;
+            }
+        }
+
+        .abtn {
+            margin-top: 3.5rem;
+            padding: 0 6rem;
+            z-index: 3;
+
+            @include media-breakpoint-down(lg) {
+                margin-top: 1rem;
+                height: 4.8rem;
+            }
+
+            @include media-breakpoint-down(md) {
+                width: 100%;
+                max-width: none;
+                margin-top: 0;
+            }
+        }
+    }
+
+    .contact-img {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -4rem;
+
+        @include media-breakpoint-down(lg) {
+            bottom: auto;
+            top: -25rem;
+        }
+
+        @include media-breakpoint-down(md) {
+            top: 0;
+            position: static;
+            height: 25.4rem;
+            margin-bottom: 1rem;
+        }
+
+        @media screen and (max-width: 1100px) {
+            top: -17.5rem;
+
+            svg {
+                height: 100%;
+            }
+        }
+
+        .svg {
+            display: block;
+            margin: 0 auto;
+
+            @include media-breakpoint-down(lg) {
+                width: 100%;
+            }
+
+            @include media-breakpoint-down(md) {
+                height: 100%;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    .col-lg-3 {
+        z-index: 2;
+    }
+}

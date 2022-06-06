@@ -1,0 +1,37 @@
+.courses {
+    margin-bottom: 20rem;
+    overflow: hidden;
+
+    .row {
+        margin-bottom: 4rem;
+    }
+
+    .heading-title {
+        background: #120741;
+        border-radius: 4rem 0 0 4rem;
+        margin: 3rem -3rem 3rem 0;
+        padding: .8rem 3rem;
+        color: #FFFFFF;
+    }
+}
+
+@include media-breakpoint-down(lg) {
+    .courses {
+        margin-bottom: 5rem;
+        margin-top: 5rem;
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .courses {
+        margin: 0;
+
+        .text-end {
+            align-self: end;
+        }
+
+        .heading-title {
+            margin: 0 -3rem 0 0;
+        }
+    }
+}

@@ -1,0 +1,65 @@
+.form-control {
+    background: #FFFFFF;
+    border-radius: 4rem;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    color: $dark-dray;
+    border: 0;
+    outline: 0;
+    padding: 0 3rem;
+
+    &:hover, &:active, &:focus {
+        border: 0;
+        outline: 0;
+        box-shadow: none;
+    }
+
+    &::placeholder {
+        color: rgba(0, 0, 0, 0.3);
+    }
+}
+
+textarea.form-control {
+    padding: 2.4rem 3rem;
+}
+
+button {
+    &:hover, &:active, &:focus {
+        border: 0;
+        outline: 0;
+        box-shadow: none;
+    }
+}
+
+form {
+    width: 100%;
+
+    .form-control {
+        width: 100%;
+        border-radius: 4rem;
+        background: #FFFFFF;
+        padding: 1.5rem 1.5rem 1.5rem 3rem;
+        margin-top: 1.5rem;
+
+        &.danger {
+            border: 1px solid #FF0000;
+        }
+
+        &:first-of-type {
+            margin-top: 0;
+
+            &::placeholder {
+                color: #282828;
+            }
+        }
+    }
+
+    .form-danger {
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+        color: #FF0000;
+        margin-left: 2.5rem;
+    }
+}

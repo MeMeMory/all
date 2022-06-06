@@ -1,0 +1,103 @@
+.subscribe {
+    position: relative;
+    margin-bottom: 20rem;
+    z-index: 4;
+
+    @include media-breakpoint-down(lg) {
+        margin-bottom: 7.7rem;
+    }
+
+    @include media-breakpoint-down(md) {
+        margin-bottom: 4rem;
+    }
+
+    .heading {
+        .descriptor {
+            text-align: right;
+            background: #c6ff99;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            & + h1 {
+                text-align: right;
+                color: $white;
+
+                & + h2 {
+                    text-align: right;
+                    color: $white;
+                    font-weight: 400;
+                }
+            }
+
+            @include media-breakpoint-down(md) {
+                & + h1 {
+                    margin-bottom: 1rem;
+
+                    br {
+                        display: none;
+                    }
+
+                    & + h2 {
+                        margin-bottom: 3rem;
+
+                        br {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .subscribe-form {
+        display: flex;
+        height: 100%;
+        align-items: flex-end;
+
+        @include media-breakpoint-down(lg) {
+            flex-direction: column;
+            justify-content: end;
+        }
+
+        .input-group {
+            margin-bottom: .7rem;
+
+            .form-control {
+                height: 6.5rem;
+
+                &::placeholder {
+                    color: #0000004d
+                }
+
+                @include media-breakpoint-down(lg) {
+                    height: 4.8rem;
+                    display: block;
+                    border-radius: 3.9rem !important;
+                    margin-bottom: .7rem;
+                    width: 100%;
+                }
+            }
+
+            .abtn {
+                width: 100%;
+                max-width: 25rem;
+                padding: 0 3rem;
+                margin-left: -3rem !important;
+                z-index: 3;
+
+                @include media-breakpoint-down(lg) {
+                    margin: 0 !important;
+                    display: block;
+                    width: 22rem;
+                    height: 4.8rem;
+                    border-radius: 3.9rem !important;
+                }
+
+                @include media-breakpoint-down(md) {
+                    width: 100%;
+                    max-width: none;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,261 @@
+<%= comment %>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% Object.keys(htmlWebpackPlugin.options.meta).forEach(function (key) { %>
+    <meta name="<%= key %>" content="<%= htmlWebpackPlugin.options.meta[key] %>"><% }) %>
+
+    <title>Remote Health</title>
+    <% links.forEach(function (src) { %>
+    <link <%= src %>> <% }) %>
+
+    <% htmlWebpackPlugin.files.css.forEach(function (src) { %>
+    <link rel="stylesheet" href="<%= src %>"><% }) %>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/shared/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/shared/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/shared/favicon-16x16.png">
+    <link rel="manifest" href="img/shared/site.webmanifest">
+    <link rel="mask-icon" href="img/shared/safari-pinned-tab.svg" color="#221e59">
+    <link rel="shortcut icon" href="img/shared/favicon.ico">
+    <meta name="msapplication-TileColor" content="#221e59">
+    <meta name="msapplication-config" content="img/shared/browserconfig.xml">
+    <meta name="theme-color" content="#221e59">
+    <% htmlWebpackPlugin.files.js.forEach(function (src) { %><% if (src.indexOf('head') !== -1) { %>
+    <script src="<%= src %>" type="module"></script><% } %><% }) %>
+    <base href="/">
+</head>
+<body>
+    <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/header.html').default %>
+    <div class="main-content" data-spy="scroll" data-target="#navbar" data-offset="100" data-method="offset">
+
+        <!-- <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/main-screen.html').default %>-->
+        <!-- <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/courses.html').default %>-->
+        <!-- <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/mission.html').default %>-->
+        <!-- <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/team.html').default %>-->
+        <!-- <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/news.html').default %>-->
+        <!-- <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/contact.html').default %>-->
+        <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/moduls.html').default %>
+
+        <!-- <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/footer.html').default %>-->
+        <% htmlWebpackPlugin.files.js.forEach(function (src) { %><% if (src.indexOf('head') === -1) { %>
+
+        <div class="alert text-center cookiealert" role="alert">
+            <div class="container">
+                Ihre Sicherheit und Privatsphäre im Internet sind uns wichtig! Es werden mittels des Einsatzes von Cookies keinerlei persönliche Daten gespeichert oder mit Dritten getauscht. Dennoch verwendet diese Website Cookies zur Steigerung von Funktionalität und Leistungsfähigkeit. Falls Sie weiter lesen und unsere Website verwenden, stimmen Sie dem Gebrauch von Cookies zu. Nähere Information finden Sie auf unserer Seite. <a href="/datenschutzerklarung.html" target="_blank">Datenschutz</a>
+
+                <button type="button" class="abtn btn-danger size-32 acceptcookies">
+                    Schließen
+                </button>
+            </div>
+        </div>
+
+        <!-- Modal-Login -->
+        <div class="modal fade" id="login" aria-labelledby="Login" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered samll">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <h1 class="modal-title">Login</h1>
+                        <h2 class="modal-subtitle">Ich bin bereits Nutzer</h2>
+                        <p>Falls Sie bereits ein Konto haben, loggen Sie sich mit Ihren Benutzerdaten ein.</p>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/" method="post">
+                            <input class="form-control danger" type="text" placeholder="E-Mail-Adresse" aria-label="E-Mail Adresse" required />
+                            <span class="form-danger">Sie müssen eine gültige E-Mail-Adresse eingeben</span>
+                            <input class="form-control" type="password" placeholder="Passwort" aria-label="Passwort" required />
+                            <sapn class="form-danger">Das eingegebene Passwort ist nicht korrekt</sapn>
+                        </form>
+                        <a class="pass-reset" href="#" data-bs-toggle="modal" data-bs-target="#recovery">Passwort vergessen</a>
+                        <button class="abtn btn-small">Login</button>
+                    </div>
+                    <div class="modal-footer">
+                        <p>Falls Sie noch ein Konto haben, können Sie hier ein neues Konto anlegen.</p>
+                        <a href="#">Registrieren</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal-Registration -->
+        <div class="modal fade" id="registration" aria-labelledby="Registration" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered medium">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <h1 class="modal-title">Registrierung</h1>
+                        <h2 class="modal-subtitle">Ich bin bereits Nutzer</h2>
+                        <p>
+                            Durch Ihre Anmeldung auf unserer Lernplattform sind Sie in der Lage unser Kursangebot zu nutzen, sowie Live-Sitzungen mit unseren
+                            Therapeuten durchzuführen.
+                        </p>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/" method="post">
+                            <div class="group-wrapper">
+                                <h5>Anrede</h5>
+                                <div class="form-radio">
+                                    <input class="form-radio-input" id="newsletter" type="radio" name="gender">
+                                    <span class="checkmark"></span>
+                                    <label class="form-radio-label" for="newsletter">Herr</label>
+                                </div>
+                                <div class="form-radio">
+                                    <input class="form-radio-input" id="newsletter-2" type="radio" name="gender">
+                                    <span class="checkmark"></span>
+                                    <label class="form-radio-label" for="newsletter-2">Frau</label>
+                                </div>
+                                <div class="form-radio">
+                                    <input class="form-radio-input" id="newsletter-3" type="radio" name="gender">
+                                    <span class="checkmark"></span>
+                                    <label class="form-radio-label" for="newsletter-3">Divers</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="control-wrapper ">
+                                    <input class="form-control danger" type="text" name="name" placeholder="Vorname" aria-label="Vorname" required />
+                                    <label for="name">*</label>
+                                </div>
+                                <span class="form-danger">Die Eingabe ist erforderlich </span>
+                            </div>
+                            <div class="form-group">
+                                <div class="control-wrapper ">
+                                    <input class="form-control danger" type="text" name="surname" placeholder="Nachname" aria-label="Nachname" required />
+                                    <label for="surname">*</label>
+                                </div>
+                                <span class="form-danger">Die Eingabe ist erforderlich </span>
+                            </div>
+                            <div class="form-group">
+                                <div class="control-wrapper ">
+                                    <input class="form-control" type="text" name="mail" placeholder="E-Mail-Adresse" aria-label="E-Mail-Adresse" required />
+                                    <label for="mail">*</label>
+                                </div>
+                                <span class="form-danger">Die Eingabe ist erforderlich </span>
+                            </div>
+                            <div class="form-group">
+                                <div class="control-wrapper ">
+                                    <input class="form-control" type="text" name="password" placeholder="Passwort" aria-label="Passwort" required />
+                                    <label for="password">*</label>
+                                </div>
+                                <span class="form-danger">Die Eingabe ist erforderlich </span>
+                            </div>
+                            <div class="form-group">
+                                <div class="control-wrapper ">
+                                    <input class="form-control" type="text" name="password-repeat" placeholder="Passwort bestätigen" aria-label="Passwort bestätigen" required />
+                                    <label for="password-repeat">*</label>
+                                </div>
+                                <span class="form-danger">Die Eingabe ist erforderlich </span>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input class="form-check-input" id="newsletter" type="checkbox" name="newsletter">
+                                    <label class="form-check-label" for="newsletter">Ich möchte den Newsletter abonnieren.</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input class="form-check-input" id="terms" type="checkbox" name="terms">
+                                    <label class="form-check-label" for="terms">Ich bin mit den <span>AGB</span> einverstanden und habe die <span>Datenschutzerklärung</span> zur Kenntnis genommen.</label>
+                                </div>
+                                <span class="form-danger">Ihr Einverständnis ist erforderlich.</span>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input class="form-check-input" id="personal-data" type="checkbox" name="personal-data">
+                                    <label class="form-check-label" for="Fpersonal-data">Ich willige in die Verarbeitung meiner personenbezogenen Daten für die Nutzung der Lernplattform ein</label>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="annotate">
+                            <h5>Einwilligungsinformationen</h5>
+                            <p>
+                                <b> Newsletter</b> <br />
+                                Der für die Verarbeitung Verantwortliche ist der Joy of Learning - Gesundheitsbildung, Lerntherapie & Entwicklungsförderung München e.V.
+                                als Betreiber der Lernplattform Remote-Health. Ihre E-Mail-Adresse wird dafür genutzt, um Ihnen unseren Newsletter zuzuschicken.
+                                Sie können Ihre Einwilligung jederzeit im Benutzerbereich der Webseite widerrufen. Ein späterer Widerruf Ihrer Einwilligung wirkt sich gemäß Art.
+                                7 Abs. 3 S. 3 DS-GVO nicht mehr auf die Rechtmäßigkeit des bis zum Widerruf erfolgten Zugriffs bzw. der bis dahin erfolgten Verarbeitungen aus.<br />
+                                Weitere Informationen finden Sie in unserer <span>Datenschutzerklärung</span>.
+                            </p>
+                        </div>
+                        <button class="abtn btn-primary disabled">Registrieren</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal-Recovery -->
+        <div class="modal fade" id="recovery" aria-labelledby="Recovery" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered big">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <h1 class="modal-title">Passwort zurücksetzen</h1>
+                        <p>
+                            Bitte tragen Sie im untenstehenden Feld Ihre E-Mail-Adresse ein und klicken Sie auf “E-Mail senden”
+                            Wir senden Ihnen einen Link zum Zurücksetzen des Passworts an die angegebene E-Mail-Adresse.
+                        </p>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/" method="post">
+                            <input class="form-control danger" type="text" placeholder="E-Mail-Adresse" aria-label="E-Mail Adresse" required />
+                            <span class="form-danger">Sie müssen eine gültige E-Mail-Adresse eingeben</span>
+                        </form>
+                        <button class="abtn btn-primary">E-Mail senden</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal-Recovery -->
+        <div class="modal fade" id="new-password" aria-labelledby="New-passwordy" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered big">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <h1 class="modal-title">Neues Passwort speichern</h1>
+                        <p>
+                            Bitte geben Sie Ihr neues Passwort in die unten stehenden Felder ein.
+                            Nach erfolgreicher Speicherung werden Sie direkt eingeloggt.
+                        </p>
+                        <p class="form-danger">
+                            * Der verwendete Link ist bereits abgelaufen. Bitte versuchen Sie es erneut
+                            und benutzen Sie den zugesendeten Link innerhalb von 24 Stunden.
+                        </p>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/" method="post">
+                            <div class="form-group">
+                                <div class="control-wrapper">
+                                    <input class="form-control danger" type="password" name="password" placeholder="Neues Passwort " aria-label="Neues Passwort " required />
+                                    <label for="password">*</label>
+                                </div>
+                                <span class="form-danger">Sie müssen eine gültige E-Mail-Adresse eingeben</span>
+                            </div>
+                            <div class="form-group">
+                                <div class="control-wrapper">
+                                    <input class="form-control" type="password" name="password-repeat" placeholder="Passwort bestätigen" aria-label="Passwort bestätigen" required />
+                                    <label for="password-repeat">*</label>
+                                </div>
+                                <sapn class="form-danger">Das eingegebene Passwort ist nicht korrekt</sapn>
+                            </div>
+                            <p><span>*</span> Pflichtfeld, bitte ausfüllen</p>
+                        </form>
+                        <button class="abtn btn-primary">Passwort speichern</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+        <script src="<%= src %>" type="module"></script><% } %><% }) %>
+</body>
+</html>

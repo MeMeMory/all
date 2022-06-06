@@ -1,0 +1,53 @@
+
+$black:               #000000;
+$white:               #FFFFFF;
+$dark-dray:           #282828;
+
+$gray-dark-100:       #2e3440;
+$gray:                #999999;
+$gray-light-100:      #6c7582;
+$gray-light-200:      #A1A7B2;
+$gray-light-300:      #d0d5de;
+$gray-light-400:      #eceef4;
+$gray-light-500:      #f7f9fc;
+$white:               #FFFFFF;
+$green-dark-200:      #1a4214;
+$green-dark-100:      #568548;
+$green:               #689954;
+$green-light-100:     #7fb268;
+$green-light-200:     #96cb79;
+$green-light-300:     #b8e09f;
+$green-light-400:     #d4f0c0;
+$green-light-500:     #e9f7df;
+
+$dark-white:          rgba(255,255,255,0.6);
+
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 425px,
+    md: 768px,
+    lg: 1280px,
+    xl: 1920px
+);
+
+$container-min-widths: (
+    sm: 360px,
+    md: 768px,
+    lg: 1280px,
+    xl: 1920px
+);
+$container-max-widths: (
+    sm: 768px,
+    md: 1280px,
+    lg: 1920px,
+    xl: 1920px
+);
+
+$custom-gutter-widths: (
+    sm: 10px,
+    md: 10px,
+    lg: 30px,
+    xl: 30px
+);
+

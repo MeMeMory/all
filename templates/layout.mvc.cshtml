@@ -1,0 +1,46 @@
+﻿<%= comment %>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <% Object.keys(htmlWebpackPlugin.options.meta).forEach(function (key) { %>
+        <meta name="<%= key %>" content="<%= htmlWebpackPlugin.options.meta[key] %>"><% }) %>
+        
+        <title>@ViewData["Title"] - Joy Of Learning</title>
+        <% links.forEach(function (src) { %>
+        <link <%= src %>> <% }) %>
+
+        <environment include="Production">
+            @await RenderSectionAsync("AnalyticHead", required: false)        
+        </environment>
+        <environment exclude="Production">
+            @if (IsSectionDefined("AnalyticHead"))
+            {
+                IgnoreSection("AnalyticHead");
+            }
+        </environment>
+        <% htmlWebpackPlugin.files.css.forEach(function (src) { %>
+        <link rel="stylesheet" href="<%= src %>" asp-append-version="true"><% }) %>
+        <% htmlWebpackPlugin.files.js.forEach(function (src) { %><% if (src.indexOf('head') !== -1) { %>
+        <script src="<%= src %>" type="module" asp-append-version="true"></script><% } %><% }) %>
+        <base href="/">
+    </head>
+    <body>
+        @RenderBody()
+        <% htmlWebpackPlugin.files.js.forEach(function (src) { %><% if (src.indexOf('head') === -1) { %>
+        <script src="<%= src %>" type="module" asp-append-version="true"></script><% } %><% }) %>
+    
+        <environment include="Production">
+            @await RenderSectionAsync("AnalyticBody", required: false)
+        </environment>
+        <environment exclude="Production">
+            @if (IsSectionDefined("AnalyticBody"))
+            {
+                IgnoreSection("AnalyticBody");
+            }
+        </environment>
+
+        @await RenderSectionAsync("Scripts", required: false)
+    </body>
+</html>

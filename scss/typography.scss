@@ -1,0 +1,120 @@
+h1, .tph-h1 {
+    font-size: 5.6rem;
+    line-height: 1.12;
+    font-weight: 700;
+    color: $dark-dray;
+    margin-bottom: 0;
+
+    @include media-breakpoint-down(lg) {
+        font-size: 3.2rem;
+    }
+
+    @include media-breakpoint-down(md) {
+        font-size: 2.6rem;
+    }
+
+    @include media-breakpoint-down(sm) {
+        font-size: 2.3rem;
+    }
+}
+
+h2, .tph-h2 {
+    font-size: 2.4rem;
+    line-height: 1.3;
+    font-weight: 500;
+    color: $dark-dray;
+    margin-bottom: 0;
+
+    @include media-breakpoint-down(lg) {
+        font-size: 1.8rem;
+    }
+
+    @include media-breakpoint-down(md) {
+        font-size: 1.4rem;
+    }
+}
+
+h3, .tph-h3 {
+    font-size: 1.8rem;
+    line-height: 1.7;
+    font-weight: 700;
+    margin-bottom: 0;
+
+    @include media-breakpoint-down(sm) {
+        font-size: 1.6rem;
+    }
+}
+
+h4, .tph-h4 {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    font-weight: 500;
+    color: $dark-dray;
+    margin-bottom: 0;
+}
+
+h5, .tph-h5 {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    font-weight: 500;
+    color: $dark-dray;
+    margin-bottom: 0;
+}
+
+
+a {
+    color: $dark-dray;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    font-weight: 500;
+    text-decoration: none;
+
+    &:hover {
+        color: #E03194;
+        text-decoration: none;
+    }
+
+    &.icon {
+        padding-left: 3.5rem;
+        background: left center no-repeat transparent;
+
+        &.icon-email {
+            background-image: url("../img/icon/letter.svg");
+        }
+    }
+}
+
+p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.8rem;
+    line-height: 1.3;
+    color: $dark-dray;
+}
+
+a, .link {
+    * {
+        transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+}
+
+.descriptor {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    background: linear-gradient(89.97deg, #E03194 5.86%, #CF0D7B 93.33%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+}
+
+ul {
+    li {
+        font-family: 'Lato', sans-serif;
+        color: #282828;
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+}
