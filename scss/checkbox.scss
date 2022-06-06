@@ -2,10 +2,9 @@
     margin: .7rem 0;
     padding-left: 3rem;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
 
     &-input[type="checkbox"] {
-        margin-top: -0.3rem;
         width: 2rem;
         min-width: 2rem;
         height: 2rem;
@@ -16,6 +15,7 @@
         border: none;
         background: #FFFFFF;
         margin-left: -3rem;
+        align-self: flex-start;
 
         &:focus {
             outline: none;
@@ -45,9 +45,8 @@
                 content: '*';
                 color: #ff0000;
                 position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                left: .5rem;
+                top: 0.2rem;
+                left: .6rem;
             }
         }
 
