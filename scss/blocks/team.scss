@@ -1,6 +1,5 @@
 .team {
     margin-bottom: 20rem;
-    overflow: hidden;
 
     @include media-breakpoint-down(lg) {
         margin-bottom: 6rem;
@@ -8,41 +7,6 @@
 
     @include media-breakpoint-down(md) {
         margin-bottom: 4rem;
-    }
-
-    .heading {
-        margin-bottom: 5rem;
-
-        .heading-title {
-            background: #120741;
-            border-radius: 4rem 0 0 4rem;
-            margin: 3rem -3rem 3rem 0;
-            padding: .8rem 3rem;
-            color: #FFFFFF;
-
-            @include media-breakpoint-down(md) {
-                margin: 0 -3rem 0 0;
-
-                br {
-                    display: none;
-                }
-            }
-        }
-
-        .text-end {
-            * {
-                margin-left: auto;
-                max-width: 60%;
-            }
-
-            @include media-breakpoint-down(md) {
-                align-self: end;
-            }
-        }
-
-        @include media-breakpoint-down(md) {
-            margin-bottom: 4rem;
-        }
     }
 
     .team-item {

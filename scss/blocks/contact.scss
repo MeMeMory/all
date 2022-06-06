@@ -1,6 +1,6 @@
 .contact {
     position: relative;
-    z-index: 3;
+    z-index: 1;
     padding-bottom: 10rem;
 
     &:before {
@@ -13,15 +13,10 @@
         height: 240rem;
         background: url("../../img/footer/background3Frame.png") bottom/cover no-repeat;
 
-        @media screen and (min-width: 1901px) {
+        @media screen and (max-width: 1920px) {
             background: url("../../img/footer/background3-big.png") top repeat-x;
-            bottom: -20rem;
-        }
-
-        @media only screen and (max-width: 1900px) {
-            height: 240rem;
-            background: url("../../img/footer/background2.png") top no-repeat;
-            bottom: -20rem;
+            height: 197rem;
+            bottom: 0rem;
         }
 
         @include media-breakpoint-down(lg) {
@@ -39,10 +34,6 @@
         height: 25.7rem;
         background: url("../../img/footer/footer-bg-big.png") top repeat-x;
 
-        @media (-webkit-min-device-pixel-ratio: 2) {
-            height: 28.2rem;
-        }
-
         @media screen and (max-width: 1920px) {
             height: 39.5rem;
             background: url("../../img/footer/footer-bg.png") top repeat-x;
@@ -50,16 +41,25 @@
 
         @include media-breakpoint-down(lg) {
             content: none;
+            background: url("../../img/footer/background3FrameMD.png") top/cover no-repeat;
+            height: 170rem;
+            bottom: 0;
+            z-index: -1;
         }
     }
 
     @include media-breakpoint-down(lg) {
         margin-bottom: 6rem;
+        z-index: 2;
     }
 
     @include media-breakpoint-down(md) {
         padding-bottom: 0;
         margin-bottom: 3rem;
+    }
+
+    .col-lg-4 {
+        z-index: 2;
     }
 
     .heading {

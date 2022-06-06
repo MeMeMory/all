@@ -10,8 +10,8 @@ footer {
     }
 
     &:before {
-        position: absolute;
         content: '';
+        position: absolute;
         left: 0;
         right: 0;
     }
@@ -20,8 +20,8 @@ footer {
         z-index: 1;
 
         &:before {
-            background: url("../../img/footer/background3FrameMD.png") center/cover no-repeat;
-            height: 160rem;
+            background: url("../../img/footer/background3FrameMD.png") top/cover no-repeat;
+            height: 175rem;
             bottom: 0;
             z-index: -1;
         }
@@ -30,7 +30,7 @@ footer {
     @include media-breakpoint-down(md) {
         &:before {
             background: url("../../img/footer/background3FrameSM.png") top/cover no-repeat;
-            height: 220.5rem;
+            height: 205rem;
             bottom: 0;
         }
     }
@@ -78,6 +78,7 @@ footer {
     }
 
     a {
+        display: inline-flex;
         font-weight: 400;
         font-size: 1.3rem;
         line-height: 2rem;
@@ -104,7 +105,8 @@ footer {
         flex-direction: column;
 
         a {
-            display: inline-block;
+            width: fit-content;
+            display: flex;
         }
     }
 
@@ -199,6 +201,12 @@ footer {
             font-size: inherit;
             line-height: inherit;
             font-weight: inherit;
+            color: inherit;
+
+            &:hover {
+                color: #E03194;
+                text-decoration: underline;
+            }
         }
     }
 }

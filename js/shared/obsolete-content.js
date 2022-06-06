@@ -29,9 +29,9 @@ function init() {
     $(window).scroll(function () {
         let scroll = $(window).scrollTop();
         if (scroll < 100) {
-            $('.sticky-top').removeClass('bgtransform');
+            $('.fixed-top').removeClass('bgtransform');
         } else {
-            $('.sticky-top').addClass('bgtransform');
+            $('.fixed-top').addClass('bgtransform');
         }
     });
 

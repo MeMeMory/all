@@ -6,41 +6,6 @@
         margin-bottom: 4rem;
     }
 
-    .heading {
-        margin-bottom: 4rem;
-
-        @include media-breakpoint-down(md) {
-            .col-6 {
-                &:first-of-type {
-                    align-self: end;
-                }
-            }
-        }
-
-        .heading-title {
-            background: #120741;
-            border-radius: 0 4rem 4rem 0;
-            margin: 3rem 0 3rem -3rem;
-            text-align: right;
-            font-weight: 500;
-            font-size: 2.4rem;
-            padding: .7rem 2rem;
-            color: $white;
-
-            @include media-breakpoint-down(lg) {
-                font-size: 1.8rem;
-                margin: 1.5rem 0 2rem -3rem;
-            }
-
-            @include media-breakpoint-down(md) {
-                font-size: 1.6rem;
-                margin-top: 0;
-                margin-bottom: 0;
-                align-self: end;
-            }
-        }
-    }
-
     .position-relative {
         &:before {
             content: '';

@@ -1,17 +1,31 @@
 .main-screen {
-    margin-top: -14rem;
     padding-top: 14rem;
     margin-bottom: 6.4rem;
-    background: url("../../img/pages/main/backgroundFrame.png") bottom repeat-x;
+    position: relative;
 
-    @include media-breakpoint-down(lg) {
-        background: url("../../img/pages/main/backgroundFrame.png") bottom/cover no-repeat;
-        margin-bottom: 5rem;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: url("../../img/pages/main/backgroundFrame.png") bottom repeat-x;
+        z-index: -1;
+
+        @include media-breakpoint-down(lg) {
+            background: url("../../img/pages/main/backgroundFrame.png") bottom/cover no-repeat;
+            margin-bottom: 5rem;
+        }
+
+        @include media-breakpoint-down(md) {
+            background: url("../../img/pages/main/backgroundFrameSM.png") bottom/cover no-repeat;
+            margin-bottom: 2rem;
+        }
     }
 
-    @include media-breakpoint-down(md) {
-        background: url("../../img/pages/main/backgroundFrameSM.png") bottom/cover no-repeat;
-        margin-bottom: 2rem;
+    @include media-breakpoint-down(lg) {
+        padding-bottom: 10rem;
     }
 
     .header-main-img {

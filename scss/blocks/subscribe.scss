@@ -1,7 +1,7 @@
 .subscribe {
     position: relative;
     margin-bottom: 20rem;
-    z-index: 4;
+    z-index: 5;
 
     @include media-breakpoint-down(lg) {
         margin-bottom: 7.7rem;

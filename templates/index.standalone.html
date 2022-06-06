@@ -31,15 +31,16 @@
     <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/header.html').default %>
     <div class="main-content" data-spy="scroll" data-target="#navbar" data-offset="100" data-method="offset">
 
-        <!-- <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/main-screen.html').default %>-->
-        <!-- <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/courses.html').default %>-->
-        <!-- <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/mission.html').default %>-->
-        <!-- <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/team.html').default %>-->
-        <!-- <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/news.html').default %>-->
-        <!-- <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/contact.html').default %>-->
+        <!--        <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/main-screen.html').default %>
+            <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/courses.html').default %>
+            <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/mission.html').default %>
+            <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/team.html').default %>
+            <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/news.html').default %>
+            <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/contact.html').default %>-->
+
         <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/moduls.html').default %>
 
-        <!-- <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/footer.html').default %>-->
+        <!--<%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/footer.html').default %>-->
         <% htmlWebpackPlugin.files.js.forEach(function (src) { %><% if (src.indexOf('head') === -1) { %>
 
         <div class="alert text-center cookiealert" role="alert">
@@ -87,7 +88,7 @@
                     <div class="modal-header">
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         <h1 class="modal-title">Registrierung</h1>
-                        <h2 class="modal-subtitle">Ich bin bereits Nutzer</h2>
+                        <a href="#" class="modal-subtitle">Ich bin bereits Nutzer</a>
                         <p>
                             Durch Ihre Anmeldung auf unserer Lernplattform sind Sie in der Lage unser Kursangebot zu nutzen, sowie Live-Sitzungen mit unseren
                             Therapeuten durchzuführen.
@@ -98,19 +99,19 @@
                             <div class="group-wrapper">
                                 <h5>Anrede</h5>
                                 <div class="form-radio">
-                                    <input class="form-radio-input" id="newsletter" type="radio" name="gender">
+                                    <input class="form-radio-input" id="gender" type="radio" name="gender" checked>
                                     <span class="checkmark"></span>
-                                    <label class="form-radio-label" for="newsletter">Herr</label>
+                                    <label class="form-radio-label" for="gender">Herr</label>
                                 </div>
                                 <div class="form-radio">
-                                    <input class="form-radio-input" id="newsletter-2" type="radio" name="gender">
+                                    <input class="form-radio-input" id="gender-2" type="radio" name="gender">
                                     <span class="checkmark"></span>
-                                    <label class="form-radio-label" for="newsletter-2">Frau</label>
+                                    <label class="form-radio-label" for="gender-2">Frau</label>
                                 </div>
                                 <div class="form-radio">
-                                    <input class="form-radio-input" id="newsletter-3" type="radio" name="gender">
+                                    <input class="form-radio-input" id="gender-3" type="radio" name="gender">
                                     <span class="checkmark"></span>
-                                    <label class="form-radio-label" for="newsletter-3">Divers</label>
+                                    <label class="form-radio-label" for="gender-3">Divers</label>
                                 </div>
                             </div>
 
@@ -152,21 +153,21 @@
 
                             <div class="form-group">
                                 <div class="form-check">
-                                    <input class="form-check-input" id="newsletter" type="checkbox" name="newsletter">
+                                    <input class="form-check-input" id="newsletter" type="checkbox" name="newsletter" checked>
                                     <label class="form-check-label" for="newsletter">Ich möchte den Newsletter abonnieren.</label>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="form-check">
-                                    <input class="form-check-input" id="terms" type="checkbox" name="terms">
-                                    <label class="form-check-label" for="terms">Ich bin mit den <span>AGB</span> einverstanden und habe die <span>Datenschutzerklärung</span> zur Kenntnis genommen.</label>
+                                    <input class="form-check-input" id="terms-2" type="checkbox" name="terms">
+                                    <label class="form-check-label required" for="terms-2">Ich bin mit den <a href="#">AGB</a> einverstanden und habe die <a href="#">Datenschutzerklärung</a> zur Kenntnis genommen.</label>
                                 </div>
                                 <span class="form-danger">Ihr Einverständnis ist erforderlich.</span>
                             </div>
                             <div class="form-group">
                                 <div class="form-check">
                                     <input class="form-check-input" id="personal-data" type="checkbox" name="personal-data">
-                                    <label class="form-check-label" for="Fpersonal-data">Ich willige in die Verarbeitung meiner personenbezogenen Daten für die Nutzung der Lernplattform ein</label>
+                                    <label class="form-check-label required" for="personal-data">Ich willige in die Verarbeitung meiner personenbezogenen Daten für die Nutzung der Lernplattform ein</label>
                                 </div>
                             </div>
 
@@ -181,7 +182,7 @@
                                 als Betreiber der Lernplattform Remote-Health. Ihre E-Mail-Adresse wird dafür genutzt, um Ihnen unseren Newsletter zuzuschicken.
                                 Sie können Ihre Einwilligung jederzeit im Benutzerbereich der Webseite widerrufen. Ein späterer Widerruf Ihrer Einwilligung wirkt sich gemäß Art.
                                 7 Abs. 3 S. 3 DS-GVO nicht mehr auf die Rechtmäßigkeit des bis zum Widerruf erfolgten Zugriffs bzw. der bis dahin erfolgten Verarbeitungen aus.<br />
-                                Weitere Informationen finden Sie in unserer <span>Datenschutzerklärung</span>.
+                                Weitere Informationen finden Sie in unserer <a href="#">Datenschutzerklärung</a>.
                             </p>
                         </div>
                         <button class="abtn btn-primary disabled">Registrieren</button>
@@ -252,7 +253,6 @@
                 </div>
             </div>
         </div>
-
 
         <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
