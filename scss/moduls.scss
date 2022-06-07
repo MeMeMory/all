@@ -95,6 +95,22 @@
                 }
             }
         }
+
+        a {
+            &.partner {
+                width: 20rem;
+                height: 10rem;
+
+                svg, img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            &.partner-viventum {
+                margin-left: 3rem;
+            }
+        }
     }
 
     .text-picture {

@@ -1,8 +1,6 @@
 .form-check {
     margin: .7rem 0;
-    padding-left: 3rem;
-    display: flex;
-    align-items: flex-end;
+    padding-left: 0;
 
     &-input[type="checkbox"] {
         width: 2rem;
@@ -14,8 +12,8 @@
         border-radius: .4rem;
         border: none;
         background: #FFFFFF;
-        margin-left: -3rem;
-        align-self: flex-start;
+        margin-left: 0;
+        margin-top: 0;
 
         &:focus {
             outline: none;
@@ -35,22 +33,25 @@
         font-size: 1.4rem;
         font-weight: 500;
         padding-left: 1rem;
-        max-width: 90%;
+        max-width: 35rem;
 
         &.required {
             position: relative;
-            padding-left: 2rem;
+            margin-left: 1rem;
 
             &:before {
                 content: '*';
                 color: #ff0000;
                 position: absolute;
-                top: 0.2rem;
-                left: .6rem;
+                top: 0rem;
+                left: -0.3rem;
             }
         }
 
         a {
+            font-size: inherit;
+            font-weight: inherit;
+            line-height: inherit;
             color: #E03194;
 
             &:hover {
