@@ -80,6 +80,7 @@ body {
 
 .main-content {
     flex-grow: 1;
+    z-index: 4;
 }
 
 .heading-block {
@@ -380,6 +381,33 @@ body {
             line-height: inherit;
             font-weight: inherit;
         }
+    }
+}
+
+.bottom_bg {
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        height: 155rem;
+        width: 100%;
+        background: url('../img/footer/background3.svg') repeat-x top center;
+
+        @include media-breakpoint-down(md) {
+            content: none;
+        }
+    }
+
+    @include media-breakpoint-down(xl) {
+        background: url('../img/backgrounds/brain.svg') no-repeat top 207px right -94px, linear-gradient(360deg, #221E59 25.96%, #583695 80.82%, #6869F7 122.98%);
+    }
+
+    @include media-breakpoint-down(md) {
+        background: none;
     }
 }
 

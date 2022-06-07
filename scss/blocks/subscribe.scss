@@ -2,7 +2,7 @@
     position: relative;
     margin-bottom: 20rem;
     z-index: 5;
-    overflow: hidden;
+    padding-top: 20rem;
 
     @include media-breakpoint-down(lg) {
         margin-bottom: 7.7rem;
@@ -10,6 +10,14 @@
 
     @include media-breakpoint-down(md) {
         margin-bottom: 4rem;
+    }
+
+    @media (max-width: 560px) {
+        padding-top: 5rem;
+    }
+
+    @media (max-width: 450px) {
+        padding-top: 3rem;
     }
 
     .heading {

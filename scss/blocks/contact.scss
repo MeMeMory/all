@@ -1,61 +1,33 @@
 .contact {
     position: relative;
     z-index: 1;
-    padding-bottom: 10rem;
 
     &:before {
         position: absolute;
-        content: '';
-        z-index: -1;
+        bottom: -1px;
         left: 0;
-        right: 0;
-        bottom: -30rem;
-        height: 240rem;
-        background: url("../../img/footer/background3Frame.png") bottom/cover no-repeat;
-
-        @media screen and (max-width: 1920px) {
-            background: url("../../img/footer/background3-big.png") top repeat-x;
-            height: 197rem;
-            bottom: 0rem;
-        }
+        width: 100%;
+        height: 126px;
+        content: '';
+        background: url('../../img/backgrounds/bg_footer.svg') repeat-x bottom center;
+        z-index: 2;
 
         @include media-breakpoint-down(lg) {
-            content: none;
-        }
-    }
-
-    &:after {
-        position: absolute;
-        content: '';
-        z-index: 1;
-        left: 0;
-        right: 0;
-        bottom: -.2rem;
-        height: 25.7rem;
-        background: url("../../img/footer/footer-bg-big.png") top repeat-x;
-
-        @media screen and (max-width: 1920px) {
-            height: 39.5rem;
-            background: url("../../img/footer/footer-bg.png") top repeat-x;
+            background: url('../../img/backgrounds/bg_footer.svg') no-repeat bottom center/100% 126px;
         }
 
-        @include media-breakpoint-down(lg) {
+        @include media-breakpoint-down(md) {
             content: none;
-            background: url("../../img/footer/background3FrameMD.png") top/cover no-repeat;
-            height: 170rem;
-            bottom: 0;
-            z-index: -1;
         }
     }
 
     @include media-breakpoint-down(lg) {
-        margin-bottom: 6rem;
         z-index: 2;
     }
 
     @include media-breakpoint-down(md) {
         padding-bottom: 0;
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
     }
 
     .col-lg-4 {
@@ -99,7 +71,7 @@
     }
 
     .block-pb {
-        padding-bottom: 9.3rem;
+        padding-bottom: 6rem;
 
         @media screen and (max-width: 1420px) {
             padding-bottom: 5.5rem;
@@ -168,6 +140,10 @@
         @include media-breakpoint-down(lg) {
             bottom: auto;
             top: -25rem;
+
+            svg {
+                height: 460px;
+            }
         }
 
         @include media-breakpoint-down(md) {
@@ -178,10 +154,10 @@
         }
 
         @media screen and (max-width: 1100px) {
-            top: -17.5rem;
+            // top: -17.5rem;
 
             svg {
-                height: 100%;
+                //height: 100%;
             }
         }
 

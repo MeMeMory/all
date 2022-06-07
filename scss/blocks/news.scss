@@ -1,12 +1,41 @@
 .news {
     position: relative;
     z-index: 5;
-    margin-bottom: 20rem;
-    overflow: hidden;
+    padding-bottom: 10rem;
+
+    &:after {
+        position: absolute;
+        bottom: -273px;
+        left: 0;
+        content: '';
+        height: 655px;
+        width: 100%;
+        background: url('../img/backgrounds/bg_bottom.svg') repeat-x bottom center;
+        z-index: -1;
+    }
 }
 
 @include media-breakpoint-down(lg) {
     .news {
         margin-bottom: 10rem;
+
+        &:after {
+            background: url('../img/backgrounds/bg_bottom.svg') bottom/contain no-repeat;
+            bottom: -250px;
+            height: 440px;
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .news {
+        margin-bottom: 2rem;
+        padding-bottom: 0;
+
+        &:after {
+            bottom: -150px;
+            height: 300px;
+            content: none;
+        }
     }
 }

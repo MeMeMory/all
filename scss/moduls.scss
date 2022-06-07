@@ -87,11 +87,12 @@
                 font-size: inherit;
                 font-weight: inherit;
                 line-height: inherit;
-                background: linear-gradient(89.97deg, #E03194 5.86%, #CF0D7B 93.33%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-                text-fill-color: transparent;
+                color: #E03194;
+
+                &:hover {
+                    color: #cb2683;
+                    text-decoration: underline;
+                }
             }
         }
     }

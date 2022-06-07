@@ -1,38 +1,35 @@
 footer {
     background: #120741;
+    padding-top: 7rem;
     padding-bottom: 14rem;
     position: relative;
     z-index: 3;
     background: #120741;
+    margin-top: -1px;
+
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        right: 0;
+        height: 228rem;
+        width: 100%;
+        background: url(../img/footer/background3FrameMD.png) top/cover no-repeat;
+        z-index: -1;
+
+        @media screen and (max-width: 560px) {
+            height: 195rem;
+            background: url(../img/footer/background3FrameSM.png) top/cover no-repeat;
+        }
+    }
 
     @include media-breakpoint-down(lg) {
         padding-bottom: 3rem;
     }
 
-    &:before {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-    }
-
-    @include media-breakpoint-down(lg) {
-        z-index: 1;
-
-        &:before {
-            background: url("../../img/footer/background3FrameMD.png") top/cover no-repeat;
-            height: 175rem;
-            bottom: 0;
-            z-index: -1;
-        }
-    }
-
     @include media-breakpoint-down(md) {
-        &:before {
-            background: url("../../img/footer/background3FrameSM.png") top/cover no-repeat;
-            height: 205rem;
-            bottom: 0;
-        }
+        padding-top: 0;
     }
 
     .wrapper {
