@@ -442,8 +442,6 @@ body {
             }
 
             &.image {
-                padding: 3rem;
-
                 .card-img {
                     border-radius: 3.9rem;
                     width: 100%;
@@ -467,6 +465,8 @@ body {
 
 @include media-breakpoint-down(md) {
     .cards-wrapper {
+        margin: 0 -.5rem;
+
         .card {
             width: 50%;
             max-width: 16rem;
@@ -496,6 +496,11 @@ body {
                 }
             }
 
+            &.image {
+                padding: 1rem;
+                min-height: 18.6rem;
+            }
+
             .card-title {
                 font-size: 1.3rem;
             }
@@ -511,10 +516,12 @@ body {
 
             .card-description {
                 font-size: 1.2rem;
+                margin-bottom: 1rem;
             }
 
             .card-allnews {
                 min-height: 4.5rem;
+                padding: 0 2rem;
             }
         }
     }
