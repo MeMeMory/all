@@ -15,7 +15,7 @@
         z-index: -1;
 
         @include media-breakpoint-down(lg) {
-            background: url("../../img/pages/main/backgroundFrame.png") bottom/cover no-repeat;
+            background: url("/img/pages/main/backgroundFrame.png") bottom/cover no-repeat;
             margin-bottom: 5rem;
         }
 

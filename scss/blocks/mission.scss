@@ -14,27 +14,37 @@
             height: 115rem;
             top: -29rem;
             left: -57%;
-            background: url("../../img/pages/mission/background2Frame.svg") left/cover no-repeat;
+            background: url("/img/pages/mission/background2Frame.svg") left/cover no-repeat;
             z-index: -1;
+
+            @media (-webkit-min-device-pixel-ratio: 1.1) {
+                @media screen and (max-width: 1500px) {
+                    left: -111%;
+                }
+            }
+
+
+            @media screen and (max-width: 1500px) {
+                left: -81%;
+            }
 
             @include media-breakpoint-down(lg) {
                 left: auto;
-                right: 2rem;
+                right: 7rem;
             }
 
             @include media-breakpoint-down(md) {
                 width: 100%;
-                height: 185%;
-                top: -22rem;
+                height: 200%;
+                top: -19rem;
                 left: 0;
                 right: auto;
-                background: url("../../img/pages/mission/bg2mb.svg") left/cover no-repeat;
+                background: url("/img/pages/mission/bg2mb.svg") left/contain no-repeat;
             }
 
             @include media-breakpoint-down(sm) {
-                height: 155%;
-                left: -9.5rem;
-                top: -11rem;
+                top: -18rem;
+                height: 215%;
             }
         }
     }

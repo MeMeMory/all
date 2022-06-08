@@ -142,6 +142,15 @@ function init() {
             document.querySelector('.right-nav').classList.remove('opened');
         }
     });
+
+    $(window).on('load resize', function () {
+        $(".description-heder").attr("data-bs-target", '')
+        if ($(window).width() < 768) {
+            console.log('2')
+            $(".description-heder").attr("data-bs-target", '#panelsStayOpen-heading')
+        }
+    });
+
 }
 
 

@@ -1,0 +1,372 @@
+.course-page {
+    padding: 10rem 0;
+
+    .row {
+        > div {
+            &:nth-of-type(1) {
+                max-height: 64.3rem;
+            }
+
+            &:nth-of-type(2) {
+                max-height: 64.3rem;
+            }
+        }
+    }
+
+    .bottom-bg {
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            height: 3.5rem;
+            -webkit-box-shadow: inset 0 -15px 20px -5px #d9d9d9a3;
+            -moz-box-shadow: inset 0 -15px 20px -5px #d9d9d9a3;
+            box-shadow: inset 0 -15px 20px -5px #d9d9d9a3;
+        }
+    }
+
+    .back-title {
+        margin-bottom: 1rem;
+    }
+
+    .video-wrapper {
+        width: 100%;
+        height: 100%;
+
+        iframe, img {
+            width: 100%;
+            height: 100%;
+            border-radius: 1.5rem;
+            aspect-ratio: 16/9;
+        }
+    }
+
+    .video-list {
+        height: 100%;
+        padding-right: 1rem;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 1rem;
+            border-radius: 2.1rem;
+        }
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.44);
+        }
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: #999999;
+            border-radius: 2.1rem;
+        }
+
+        .accordion-item {
+            border-radius: 1.5rem;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            background: rgba(255, 255, 255, 0.44);
+
+            &:hover {
+                .accordion-header {
+                    .accordion-button {
+                        &.collapsed {
+                            h4 {
+                                color: #593B9E;
+                                transition: all .3s ease;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .accordion-header {
+                .accordion-button {
+                    padding: 1rem 1.5rem;
+                    background: rgba(255, 255, 255, 0.44);
+                    cursor: pointer;
+
+                    &::after {
+                        background-image: url(/img/courses-page/Union2.svg);
+                        transform: rotateX(90drg);
+                        transition: transform .3s ease;
+                    }
+
+                    &.collapsed {
+                        &::after {
+                            background-image: url(/img/courses-page/Union.svg);
+                        }
+
+                        h4 {
+                            color: #282828;
+                            transition: all .3s ease;
+                        }
+                    }
+
+                    div {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
+
+                    h4 {
+                        font-weight: 500;
+                        font-size: 1.8rem;
+                        line-height: 1.7;
+                        color: #593B9E;
+                    }
+
+                    p {
+                        font-weight: 500;
+                        font-size: 1.4rem;
+                        line-height: 1;
+                        margin-bottom: 0;
+                        color: #42424299;
+                    }
+                }
+            }
+
+            .accordion-body {
+                padding: 0;
+
+                .body-item {
+                    display: flex;
+                    align-items: flex-start;
+                    padding: 1rem 0;
+                    margin-top: 0;
+                    cursor: pointer;
+
+                    &:hover {
+                        background: #F4F4F4;
+
+                        .numb {
+                            color: #282828;
+                        }
+                    }
+                }
+
+                .svg {
+                    width: 4.5rem;
+                    height: 4.5rem;
+                }
+
+                .numb {
+                    min-width: 3rem;
+                    font-weight: 500;
+                    font-size: 1.8rem;
+                    line-height: 1.17;
+                    color: #282828;
+                    padding-right: .5rem;
+                }
+
+                .info {
+                    display: flex;
+                    flex-direction: column;
+
+                    h4 {
+                        font-weight: 500;
+                        font-size: 1.8rem;
+                        line-height: 1.17;
+                        margin-bottom: .5rem;
+                    }
+
+                    span {
+                        font-weight: 500;
+                        font-size: 1.4rem;
+                        line-height: 1;
+                        color: #42424299;
+                    }
+                }
+            }
+        }
+    }
+
+    .description {
+        margin-top: 3rem;
+
+        .accordion-item {
+            border: none;
+            background: none;
+
+            .accordion-header {
+                .accordion-button {
+                    padding: 0;
+                    background: none;
+                    box-shadow: none;
+                    cursor: default;
+
+                    &::after {
+                        content: none;
+                    }
+
+                    &.collapsed {
+                        h4 {
+                            color: #282828;
+                            transition: all .3s ease;
+                        }
+                    }
+
+                    div {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
+
+                    h4 {
+                        font-weight: 700;
+                        font-size: 4rem;
+                        line-height: 1.2;
+                    }
+
+                    p {
+                        font-weight: 500;
+                        font-size: 1.4rem;
+                        line-height: 1;
+                        margin-bottom: 0;
+                        color: #42424299;
+                    }
+                }
+            }
+
+            .accordion-body {
+                margin-top: 3rem;
+                padding: 0;
+
+                p {
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(lg) {
+    .course-page {
+        .row {
+            > div {
+                &:nth-of-type(1) {
+                    order: 1;
+                    margin-bottom: 1.4rem;
+                }
+
+                &:nth-of-type(2) {
+                    order: 3;
+                }
+
+                &:nth-of-type(3) {
+                    order: 2;
+                }
+            }
+        }
+
+        .video-wrapper {
+            margin-bottom: 2rem;
+
+            img {
+                height: 100%;
+            }
+        }
+
+        .description {
+            margin-top: 0;
+
+            .accordion-item {
+                .accordion-header {
+                    .accordion-button {
+                        div {
+                            order: 1;
+                        }
+
+                        &::after {
+                            order: 2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .course-page {
+        padding: 5rem 0;
+
+        .video-list {
+            .accordion-item {
+                &:hover {
+                    .accordion-header {
+                        .accordion-button {
+                            &.collapsed {
+                                h4 {
+                                    color: inherit;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .accordion-header {
+                    .accordion-button {
+                        padding: .5rem 2rem .5rem .5rem;
+
+                        h4 {
+                            font-size: 1.6rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        .description {
+            .accordion-item {
+                padding-right: 4rem;
+                margin-bottom: 1rem;
+
+                &:hover {
+                    .accordion-header {
+                        .accordion-button {
+                            &.collapsed {
+                                h4 {
+                                    color: inherit;
+                                    transition: all .3s ease;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .accordion-header {
+                    .accordion-button {
+                        &::after {
+                            content: '';
+                            background-image: url(/img/courses-page/Union2.svg);
+                            transform: rotateX(90drg);
+                            transition: transform .3s ease;
+                        }
+
+                        &.collapsed {
+                            &::after {
+                                background-image: url(/img/courses-page/Union.svg);
+                            }
+
+                            h4 {
+                                color: #282828;
+                                transition: all .3s ease;
+                            }
+                        }
+
+                        h4 {
+                            font-size: 1.6rem;
+                        }
+                    }
+                }
+
+                .accordion-body {
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
+}

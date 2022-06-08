@@ -19,6 +19,7 @@
 @import "blocks/news";
 @import "blocks/subscribe";
 @import "blocks/contact";
+@import "pages/courses-page";
 @import "blocks/footer";
 @import "modal";
 
@@ -85,6 +86,10 @@ body {
 
 .heading-block {
     margin-bottom: 4rem;
+
+    h1 {
+        margin-bottom: -1rem;
+    }
 
     &.row {
         margin-bottom: 4rem;
@@ -170,26 +175,26 @@ body {
             align-items: center;
 
             &:before {
-                background: url(../img/pages/news/news-4.svg) top right no-repeat;
+                background: url(/img/pages/news/news-4.svg) top right no-repeat;
             }
         }
 
         &.date {
             &:nth-of-type(1) {
                 &:before {
-                    background: url(../img/pages/news/news-1.svg) top/cover no-repeat;
+                    background: url(/img/pages/news/news-1.svg) top/cover no-repeat;
                 }
             }
 
             &:nth-of-type(2) {
                 &:before {
-                    background: url(../img/pages/news/news-2.svg) top/cover no-repeat;
+                    background: url(/img/pages/news/news-2.svg) top/cover no-repeat;
                 }
             }
 
             &:nth-of-type(3) {
                 &:before {
-                    background: url(../img/pages/news/news-3.svg) top/cover no-repeat;
+                    background: url(/img/pages/news/news-3.svg) top/cover no-repeat;
                 }
             }
 
@@ -280,8 +285,8 @@ body {
         }
 
         .card-allnews {
-            margin: 0 auto;
             z-index: inherit;
+            min-height: 6.5rem;
         }
     }
 }
@@ -355,31 +360,36 @@ body {
     align-items: center;
     margin-left: 1.7rem;
 
-    h4 {
+    @include media-breakpoint-down(md) {
+        margin-left: 0;
+    }
+
+    .title {
         font-size: 1.6rem;
         line-height: 1.5;
         font-weight: 400;
         color: #4D5460;
         cursor: pointer;
         transition: all .3s ease;
+        display: flex;
+        align-items: center;
 
         &:hover {
             color: #E03194;
 
             &:before {
-                color: #E03194;
                 transition: all .3s ease;
+                background: url(/img/icon/shewron-left-2.svg) center/contain no-repeat;
             }
         }
 
         &:before {
-            content: '<';
+            content: '';
+            background: url(/img/icon/shewron-left.svg) center/contain no-repeat;
+            width: 1.5rem;
+            height: 1.5rem;
             display: inline-flex;
-            padding-right: 1.7rem;
-            color: #A1A7B2;
-            font-size: inherit;
-            line-height: inherit;
-            font-weight: inherit;
+            margin-right: 1.7rem;
         }
     }
 }
@@ -393,9 +403,9 @@ body {
         position: absolute;
         bottom: 0px;
         left: 0;
-        height: 155rem;
+        height: 156rem;
         width: 100%;
-        background: url('../img/footer/background3.svg') repeat-x top center;
+        background: url('/img/footer/background3.svg') repeat-x top center;
 
         @include media-breakpoint-down(md) {
             content: none;
@@ -403,11 +413,12 @@ body {
     }
 
     @include media-breakpoint-down(xl) {
-        background: url('../img/backgrounds/brain.svg') no-repeat top 207px right -94px, linear-gradient(360deg, #221E59 25.96%, #583695 80.82%, #6869F7 122.98%);
+        background: url('/img/backgrounds/brain.svg') no-repeat top 207px right -94px, linear-gradient(360deg, #221E59 25.96%, #583695 80.82%, #6869F7 122.98%);
     }
 
     @include media-breakpoint-down(md) {
-        background: none;
+        overflow: inherit;
+        background: url('/img/backgrounds/brain-sm.svg') no-repeat top 0px right 0px, linear-gradient(359.9deg, #211D58 51.93%, #583695 82.77%, #6869F7 104.51%);
     }
 }
 
@@ -446,6 +457,12 @@ body {
             }
         }
     }
+
+    .heading-block {
+        h1 {
+            margin-bottom: -.5rem;
+        }
+    }
 }
 
 @include media-breakpoint-down(md) {
@@ -460,7 +477,7 @@ body {
 
                 &:before {
                     height: 50%;
-                    background: url(../img/pages/news/news-4.svg) right/contain no-repeat;
+                    background: url(/img/pages/news/news-4.svg) right/contain no-repeat;
                 }
             }
 
@@ -468,6 +485,7 @@ body {
                 min-width: none;
                 max-width: none;
                 width: 100%;
+                min-height: 21rem;
 
                 &:nth-of-type(4) {
                     align-items: center;
@@ -496,7 +514,15 @@ body {
             }
 
             .card-allnews {
-                padding: 0 2rem;
+                min-height: 4.5rem;
+            }
+        }
+    }
+
+    .heading-block {
+        h1 {
+            br {
+                display: none;
             }
         }
     }

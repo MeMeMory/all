@@ -6,31 +6,6 @@ footer {
     background: #120741;
     margin-top: -1px;
 
-    &.static {
-        &:after {
-            content: none !important;
-        }
-    }
-
-    &:after {
-        @include media-breakpoint-down(md) {
-            content: '';
-            position: absolute;
-            bottom: 0px;
-            left: 0;
-            right: 0;
-            height: 228rem;
-            width: 100%;
-            background: url(../img/footer/background3FrameMD.png) top/cover no-repeat;
-            z-index: -1;
-        }
-
-        @media screen and (max-width: 560px) {
-            height: 195rem;
-            background: url(../img/footer/background3FrameSM.png) top/cover no-repeat;
-        }
-    }
-
     @include media-breakpoint-down(lg) {
         padding-bottom: 3rem;
     }

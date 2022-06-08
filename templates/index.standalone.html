@@ -31,9 +31,16 @@
     <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/header.html').default %>
     <div class="main-content" data-spy="scroll" data-target="#navbar" data-offset="100" data-method="offset">
 
+        <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/main-screen.html').default %>
+        <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/courses.html').default %>
+        <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/mission.html').default %>
+        <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/team.html').default %>
+        <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/news.html').default %>
+        <div class="bottom_bg">
+            <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/subscribe.html').default %>
+            <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/contact.html').default %>
+        </div>
 
-
-        <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/moduls.html').default %>
     </div>
     <%= require('html-loader?{"sources":{"list":[{"tag":"img","attribute":"data-src","type":"src"}]}}!./chunks/footer.html').default %>
     <% htmlWebpackPlugin.files.js.forEach(function (src) { %><% if (src.indexOf('head') === -1) { %>
