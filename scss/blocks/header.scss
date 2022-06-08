@@ -179,6 +179,11 @@
             }
         }
 
+        .nav-pills {
+            min-width: 63rem;
+            height: 100% !important;
+        }
+
         .navbar-menu {
             display: flex;
             align-items: center;
@@ -189,6 +194,10 @@
             &.hidden {
                 width: 100%;
                 max-width: 90rem;
+
+                .nav-pills {
+                    display: none !important;
+                }
 
                 .lang-select {
                     display: none;
